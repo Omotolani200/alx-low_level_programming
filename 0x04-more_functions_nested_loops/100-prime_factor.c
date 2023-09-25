@@ -1,46 +1,24 @@
-#include "main.h"
-
+#include <stdio.h>
 /**
- * print_number - prints number
+ * main - main function
  *
- * @n: integer to print to character
+ * Return: returns 0
  */
-void print_number(int n)
+int main(void)
 {
-	int i;
-	int d = 1;
-	unsigned int x = n;
-	unsigned int y = n;
-	int c = 0;
+	unsigned int a = 2;
+	unsigned long n = 612852475143;
 
-	if (n == 0)
+	while (a != n)
 	{
-		_putchar('0');
+		if (n % a == 0)
+		{
+			n = n / a;
+		} else
+		{
+			a++;
+		}
 	}
-	if (n < 0)
-	{
-		_putchar('-');
-		n = n + 1;
-		n = -n;
-		y = n;
-		x = n;
-		x += 1;
-		y += 1;
-	}
-
-	while (x != 0)
-	{
-		x = x / 10;
-		c++;
-	}
-	for (i = 1; i < c; i++)
-	{
-		d *= 10;
-	}
-	for (i = 0; i < c; i++)
-	{
-		_putchar(y / d + '0');
-		y = y % d;
-		d = d / 10;
-	}
+	printf("%lu\n", n);
+	return (0);
 }
